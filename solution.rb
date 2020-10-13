@@ -118,22 +118,26 @@ end
 
 #8------------------------------
 def self.binary_search(array, n)
-     min = 0
-     max = (array.length) - 1
+    min = 0
+  max = (array.length) - 1
+  loop_count = 0
 
   while min <= max
-         middle = (min + max) / 2
-
-        if array[middle] == n
-              return middle
-         elsif array[middle] > n
-             max = middle - 1
-         elsif array[middle] < n
-           min = middle + 1
-         end 
-       end 
-  "#{n} not found in this array"
-
+    middle = (min + max) / 2
+    loop_count+=1
+        
+    if array[middle] == n
+      print "#{loop_count} steps"
+      return middle
+    elsif array[middle] > n
+      max = middle - 1
+    elsif array[middle] < n
+      min = middle + 1
+    end 
+  end 
+    print "#{n} not found in this array"
+    return nil
+end 
 
 
 
