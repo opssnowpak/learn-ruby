@@ -31,27 +31,25 @@ class Solution
   end
 
 #3------------------------------
-  def stock_picker (array)
+  def stock_picker(prices) 
+    min = prices[0]
+    best_buy_time = prices[0]
+    best_sell_time = prices[0]
     max_profit = 0
-    best_buy_day = 0
-    best_sell_day = 0
+    return nil if (prices.length < 2) || ((prices.length == 2) && (prices[0] >= prices[1])) 
 
-    for buy_day in 0..(array.length - 2) 
-      for sell_day in (buy_day + 1)..(array.length - 1)
-
-      profit = array[sell_day] - array[buy_day]
-
-      if (profit > max_profit)
-        max_profit = profit   
-        best_buy_day = buy_day
-        best_sell_day = sell_day
+    prices.each_with_index do |value, index = 1|
+      if value <= min
+         min = value
+      elsif value - min >= max_profit
+        best_buy_time = min
+        best_sell_time = value
+        max_profit = value - min
       end
     end
+    
+    [prices.index(best_buy_time), prices.index(best_sell_time)]
   end
-
-  [best_buy_day, best_sell_day]
-  end
-
 #4------------------------------
   def bubble_sort(array)
     until array == array.sort
