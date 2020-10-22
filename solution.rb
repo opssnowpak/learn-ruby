@@ -155,12 +155,12 @@ class Solution
 end
      
 a = Solution.new
-  #test---------------------------
-  def gen(n)
-    n.times.map { rand(8000) + 1 }
-  end
-  
-  test = gen(5)
+#test---------------------------
+def gen(n)
+  n.times.map { rand(8000) + 1 }
+end
+
+test = gen(5)
 
   # 1
   p a.caesar_cipher("What a string!", 5) 
@@ -178,24 +178,24 @@ a = Solution.new
   # 5
   p a.selection_sort([4,3,78,2,0,2])
 
-  # 6
-  p Solution.fib_recursive(5)
-  p Solution.fib_iterative(5)
+# 6
+p Solution.fib_recursive(5)
+p Solution.fib_iterative(5)
 
-  # 7
-  p Solution.merge_sort([4,3,78,2,0,2])
+# 7
+p Solution.merge_sort([4,3,78,2,0,2])
 
-  # 8
-  Solution.binary_search([1,2,3,5], 5)
-  
-  #test 
-  require "open-uri"
-  require 'json'
-  file = open("https://gist.githubusercontent.com/jesseditson/1e6b2b524814320515ccfe7e2f856eda/raw/17d61fa1e80e14b13c4525b09f84148772586b59/words.json").read
+# 8
+Solution.binary_search([1,2,3,5], 5)
 
-  data = JSON.parse(file)
-  test_dict = data["words"]
-  test_word = test_dict.sample
-  puts "     "
+#test 
+require "open-uri"
+require 'json'
+file = open("https://gist.githubusercontent.com/jesseditson/1e6b2b524814320515ccfe7e2f856eda/raw/17d61fa1e80e14b13c4525b09f84148772586b59/words.json").read
 
-  Solution.binary_search_words(test_dict, test_word)
+data = JSON.parse(file)
+test_dict = data["words"]
+test_word = test_dict.sample
+puts "     "
+
+Solution.binary_search_words(test_dict, test_word)
