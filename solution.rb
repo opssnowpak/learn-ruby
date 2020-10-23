@@ -13,13 +13,14 @@ class Solution
   #2------------------------------
   def substrings(text,dictionary) 
     words = text.downcase.split(" ") 
-    
     frequencies = Hash.new(0) 
+    
     words.each do |word|
       dictionary.each do |dict_word| 
         frequencies[dict_word] += 1 if word.include?(dict_word)
       end
     end 
+    
     frequencies
   end
   #3------------------------------
@@ -159,24 +160,23 @@ a = Solution.new
 def gen(n)
   n.times.map { rand(8000) + 1 }
 end
-
 test = gen(5)
 
-  # 1
-  p a.caesar_cipher("What a string!", 5) 
+# 1
+p a.caesar_cipher("What a string!", 5) 
 
-  # 2  
-  dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
-  p a.substrings("Howdy partner, sit down! How's it going?", dictionary)
+# 2  
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+p a.substrings("Howdy partner, sit down! How's it going?", dictionary)
 
-  # 3
-  p a.stock_picker([17,3,6,9,15,8,6,1,10])
+# 3
+p a.stock_picker([17,3,6,9,15,8,6,1,10])
 
-  # 4
-  p a.bubble_sort([4,3,78,2,0,2])
+# 4
+p a.bubble_sort([4,3,78,2,0,2])
 
-  # 5
-  p a.selection_sort([4,3,78,2,0,2])
+# 5
+p a.selection_sort([4,3,78,2,0,2])
 
 # 6
 p Solution.fib_recursive(5)
